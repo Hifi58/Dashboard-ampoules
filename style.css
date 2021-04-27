@@ -3,3 +3,9 @@ html{
     --color2: #73BFB8;
     --colorhover: #FFC759;
 }
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color1);
+}
