@@ -1,11 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
 html{
-    --color1: #058ED9;
-    --color2: #272D2D;
+    --color1: #272D2D;
+    --color2: #058ED9;
     --colorhover: #FFC759;
+    --font: 'Antonio', sans-serif;
 }
 
 body{
     margin: 0;
     padding: 0;
     background-color: var(--color1);
+    font-family: var(--font);
+}
+
+/*Header*/
+
+header{
+    background: var(--color2);
+    opacity: 0.8;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 100%;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bloc2{
+    margin-right: 40px;
+    font-size: 1.2em;
+}
+
+q{
+    font-weight: bold;
+}
+
+/*section*/
+
+.envoi{
+    width: 100%;
+    background: var(--color2);
+    opacity: 0.8;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+}
+
+.bloc3{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.champs{
+    margin-bottom: 10px;
+}
+
+.submit{
+    border-radius: 10px;
+}
+
+/*footer*/
+
+footer{
+
+    background: var(--color2);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    opacity: 0.8;
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:50px;
+    text-align: center;
 }

@@ -20,6 +20,31 @@ catch (Exception $e)
     <title>Ampoules</title>
 </head>
 <body>
-    
+
+        <?php include "header.php" ?>
+
+<section class="envoi">
+    <div class="containerenvoi">
+        <div class="wrapperenvoi">
+            <div class="formulaire">
+
+            <form class="bloc3" action="insert.php" method="post">
+
+                Date: <input class="champs" type="text" name="date" value="En chiffres" />
+                Étage: <input class="champs" type="text" name="etage" value="En lettres" />
+                Position: <input class="champs" type="text" name="position" value="En lettres" />
+                Prix : <input class="champs" type="text" name="prix" value="Sans symboles" />
+                <br/>
+                <input class="submit" type="submit" />
+
+            </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+        <?php include "footer.php" ?>
+
 </body>
 </html>
