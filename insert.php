@@ -1,12 +1,5 @@
 <?php
-
-    try{
-    $bdd = new PDO('mysql:host=localhost;dbname=ampoules;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-            die('Erreur : ' . $e->getMessage());
-    }
+require_once('connexion.php');
 
 $date_change = $_POST['date_change'];
 $etage = $_POST['etage'];

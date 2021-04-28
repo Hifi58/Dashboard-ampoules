@@ -116,7 +116,6 @@ q{
 .gohisto{
     margin-bottom: 20px;
     background: rgba( 255, 255, 255, 0.05 );
-  
     backdrop-filter: blur( 20.0px );
     -webkit-backdrop-filter: blur( 20.0px );
     border-radius: 50px;
@@ -150,6 +149,11 @@ a{
     color: var(--color1);
     font-family: var(--font);
     font-size: 1.2em;
+}
+
+/*tableau*/
+th{
+    text-align: center;
 }
 
 /*aside*/
