@@ -7,5 +7,5 @@ catch (Exception $e)
         die('Erreur : ' . $e->getMessage());
 }
 
-$bdd->exec("INSERT INTO historique (id, date, etage, position, prix) VALUE ('', '$_POST[date]', '$_POST[etage]', '$_POST[position]', '$_POST[prix]'");
+$bdd->exec("INSERT INTO historique (id, date, etage, position, prix) VALUE ('','$_POST[date]', '$_POST[etage]', '$_POST[position]', '$_POST[prix]')");
 

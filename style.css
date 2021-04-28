@@ -51,7 +51,7 @@ q{
     -webkit-backdrop-filter: blur( 15.5px );
     display: flex;
     justify-content: center;
-    margin-top: 140px;
+    margin-top: 120px;
 }
 
 .bloc3{
@@ -68,6 +68,8 @@ q{
 .submit{
     border-radius: 10px;
 }
+
+
 
 /*footer*/
 

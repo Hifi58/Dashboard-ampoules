@@ -28,14 +28,16 @@ catch (Exception $e)
         <div class="wrapperenvoi">
             <div class="formulaire">
 
-            <form class="bloc3" action="insert.php" method="post">
+            <form class="bloc3" action="insert.php" method="POST">
 
-                Date: <input class="champs" type="text" name="date" value="En chiffres" />
-                Étage: <input class="champs" type="text" name="etage" value="En lettres" />
-                Position: <input class="champs" type="text" name="position" value="En lettres" />
-                Prix : <input class="champs" type="text" name="prix" value="Sans symboles" />
+                Date: <input class="champs" type="date" name="date"  />
+                Étage: <input class="champs" type="number" name="etage"  />
+                Position: <input class="champs" type="text" name="position"  />
+                Prix : <input class="champs" type="number" name="prix"  step=".01"/>
                 <br/>
-                <input class="submit" type="submit" />
+                <input id="snackbar" class="submit" type="submit" />
+                <br/>
+                <button><a href="historique.php">Consulter l'historique</a></button>
 
             </form>
 
@@ -45,6 +47,6 @@ catch (Exception $e)
 </section>
 
         <?php include "footer.php" ?>
-
+<script src="main.js"></script>
 </body>
 </html>
