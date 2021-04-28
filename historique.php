@@ -7,6 +7,9 @@ catch (Exception $e)
         die('Erreur : ' . $e->getMessage());
 }
 
+$limite=10;
+$compteur=0;
+
 ?>
 
 
@@ -27,8 +30,21 @@ catch (Exception $e)
     <div class="containerhisto">
         <div class="wrapperhisto">
             <div class="formulairehisto">
+            <?php 
+            
+            $reponse = $bdd->query('SELECT * FROM historique ORDER BY date_change DESC');
 
-            <button><a href="accueil.php">Ajouter une ampoule</a></button>
+                while ($donnees = $reponse->fetch()){
+                    echo 'Dates : '.$donnees['date_change'].'<br />';
+                    echo 'Étages : '.$donnees['etage'].'<br />';
+                    echo 'positions : '.$donnees['position'].'<br />';
+                    echo 'prix : '.$donnees['prix'].'€'.'<br /><br />';
+                    if($compteur >= $limite){
+                        break;
+                    };
+                };
+           ?>
+            <button class="backaccueil"><a href="accueil.php">Ajouter une ampoule</a></button>
 
             </div>
         </div>

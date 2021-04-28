@@ -34,19 +34,23 @@ catch (Exception $e)
                 <label>Étage:</label> <input class="champs" type="number" name="etage"  />
                 <label>Position:</label> <input class="champs" type="text" name="position"  />
                 <label>Prix :</label> <input class="champs" type="number" name="prix"  step=".01"/>
-                <br/>
-                <input id="snackbar" class="submit" type="submit" />
-                <br/>
-                <button><a href="historique.php">Consulter l'historique</a></button>
-
+                <div class="boutonsaccueil">
+                    <input id="snackbar" class="submit" type="submit" />
+                </div>
             </form>
 
             </div>
         </div>
     </div>
 </section>
-
-        <?php include "footer.php" ?>
+<aside>
+    <div class="gobtn">
+        <button class="gohisto"><a href="historique.php">Consulter l'historique</a></button>
+    </div>
+</aside>
+<footer class="footerbis">
+    <p class="textfooter">&#169; Tony GILLET 2021</p>
+</footer>
 <script src="main.js"></script>
 </body>
 </html>
