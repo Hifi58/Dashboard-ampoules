@@ -30,10 +30,10 @@ catch (Exception $e)
 
             <form class="bloc3" action="insert.php" method="POST">
 
-                Date: <input class="champs" type="date" name="date"  />
-                Étage: <input class="champs" type="number" name="etage"  />
-                Position: <input class="champs" type="text" name="position"  />
-                Prix : <input class="champs" type="number" name="prix"  step=".01"/>
+                <label>Date:</label> <input class="champs" type="date" name="date_change"  />
+                <label>Étage:</label> <input class="champs" type="number" name="etage"  />
+                <label>Position:</label> <input class="champs" type="text" name="position"  />
+                <label>Prix :</label> <input class="champs" type="number" name="prix"  step=".01"/>
                 <br/>
                 <input id="snackbar" class="submit" type="submit" />
                 <br/>
