@@ -1,7 +1,6 @@
 <?php
 require_once('connexion.php');
-$limite=10;
-$compteur=0;
+
 
 ?>
 
@@ -41,11 +40,12 @@ $compteur=0;
                     
         ?>
                     <tr>
-                <td><?= $donnees['date_change'] ?></td>
-                <td><?= $donnees['etage'] ?></td>
-                <td><?= $donnees['position'] ?></td>
-                <td><?= $donnees['prix'] ?></td>
-                <td><a href="modification.php?id=<?= $donnees['id'] ?>">Modifier</a>  <a href="supprimer.php?id=<?= $donnees['id'] ?>">Supprimer</a></td>
+                <td><?php echo $donnees['date_change'] ?></td>
+                <td><?php echo $donnees['etage'] ?></td>
+                <td><?php echo $donnees['position'] ?></td>
+                <td><?php echo $donnees['prix'] ?></td>
+                <td><?php echo "<a href= modification.php?id=" . $donnees['id']. ' >Modifier</a>' ?>
+                <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?>
             </tr>
 
             

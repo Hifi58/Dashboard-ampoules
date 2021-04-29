@@ -8,4 +8,8 @@ $etage = $_POST['etage'];
 $position = $_POST['position'];
 $prix = $_POST['prix'];
 
-$sql="DELETE FROM 'historique' WHERE 'id'=:id;";
+$id = $_POST['id']
+
+$bdd->exec("DELETE FROM 'historique' WHERE 'id'=:id;");
+
+echo "Suppression terminée";

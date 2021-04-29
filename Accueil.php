@@ -25,9 +25,31 @@ require_once('connexion.php');
             <form class="bloc3" action="insert.php" method="POST">
 
                 <label>Date:</label> <input class="champs" type="date" name="date_change"  />
-                <label>Étage:</label> <input class="champs" type="number" name="etage"  />
-                <label>Position:</label> <input class="champs" type="text" name="position"  />
-                <label>Prix :</label> <input class="champs" type="number" name="prix"  step=".01"/>
+                
+                <label>Étages</label><select name="etage" id="etage">
+                    <option value="">Sélection d'un étage</option>
+                    <option value="rdc">Rez-de-chaussée</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                </select>
+<br/>
+                <label>Positions</label><select name="position" id="position">
+                    <option value="">Sélection d'une position</option>
+                    <option value="gauche">Gauche</option>
+                    <option value="droite">Droite</option>
+                    <option value="fond">Fond</option>
+                </select>
+<br/>
+                <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01"  />
                 <div class="boutonsaccueil">
                     <input id="snackbar" class="submit" type="submit" />
                 </div>
