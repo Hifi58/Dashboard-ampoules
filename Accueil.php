@@ -49,7 +49,7 @@ require_once('connexion.php');
                     <option value="fond">Fond</option>
                 </select>
 <br/>
-                <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01"  />
+                <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01" title="ne pas écire de symboles monétaires"  />
                 <div class="boutonsaccueil">
                     <input id="snackbar" class="submit" type="submit" />
                 </div>

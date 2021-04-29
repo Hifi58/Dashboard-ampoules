@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
 
 html{
-    --color1: #272D2D;
-    --color2: #058ED9;
-    --colorhover: #FFC759;
+    --color1: #FFC759;
+    --color2: #272D2D;
+    --colorhover: #058ED9;
     --font: 'Antonio', sans-serif;
     box-sizing: border-box;
 }
@@ -11,7 +11,7 @@ html{
 body{
     margin: 0;
     padding: 0;
-    background-color: var(--color1);
+    background-color: var(--colorhover);
     font-family: var(--font);
 }
 
@@ -42,6 +42,11 @@ header{
 
 q{
     font-weight: bold;
+    color: var(--color1);
+}
+
+p{
+    color: var(--color1);
 }
 
 /*section*/
@@ -49,7 +54,7 @@ q{
 .envoi{
     width: 100%;
     background: var(--color2);
-    opacity: 0.8;
+    opacity: 1;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
@@ -67,7 +72,7 @@ q{
 
 .champs{
     margin-bottom: 10px;
-    color: var(--color1);
+    color: var(--color2);
 }
 
 .boutonsaccueil{
@@ -90,8 +95,8 @@ q{
 }
 
 .submit:hover{
-    background: var(--colorhover);
-    box-shadow: 0 8px 25px 0 var(--colorhover);
+    background: var(--color1);
+    box-shadow: 0 8px 25px 0 var(--color1);
     cursor: pointer;
 }
 
@@ -99,7 +104,7 @@ q{
 .historique{
     width: 100%;
     background: var(--color2);
-    opacity: 0.8;
+    opacity: 1;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
@@ -124,8 +129,8 @@ q{
 }
 
 .gohisto:hover{
-    background: var(--colorhover);
-    box-shadow: 0 8px 25px 0 var(--colorhover);
+    background: var(--color2);
+    box-shadow: 0 8px 25px 0 var(--color1);
 }
 
 .backaccueil{
@@ -151,6 +156,16 @@ a{
     font-size: 1.2em;
 }
 
+/*tableau historique*/
+
+table{
+    text-align: center;
+    color: var(--color1);
+}
+
+table a:hover{
+    text-decoration: underline var(--color1);
+}
 
 /*aside*/
 
@@ -166,7 +181,7 @@ footer{
 
     background: var(--color2);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    opacity: 0.8;
+    opacity: 1;
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -180,7 +195,7 @@ footer{
 .footerbis{
     background: var(--color2);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    opacity: 0.8;
+    opacity: 1;
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
