@@ -6,7 +6,7 @@ require_once('connexion.php');
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,7 @@ require_once('connexion.php');
                 <td><?php echo $donnees['etage'] ?></td>
                 <td><?php echo $donnees['position'] ?></td>
                 <td><?php echo $donnees['prix'] ?></td>
-                <td><?php echo "<a href= modification.php?id=" . $donnees['id']. ' >Modifier</a>' ?></td>
+                <td><?php echo "<a href= formulaire_modif.php>Modifier</a>" ?></td>
                 <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?></td>
             </tr>
 

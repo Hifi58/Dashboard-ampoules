@@ -10,7 +10,7 @@ $position = $_GET['position'];
 $prix = $_GET['prix'];
 $id = $_GET['id'];
 
-$nb_modif=$bdd->exec("UPDATE FROM historique SET date_change = '$date_change', etage = '$etage', position = '$position', prix = '$prix' WHERE  id = '$id'");
+$nb_modif=$bdd->exec("UPDATE FROM historique SET date_change = '$date_change', etage = '$etage', position = '$position', prix = '$prix1' WHERE  id = '$id'");
 
 echo $nb_modif. ' entrée modifiée';
 

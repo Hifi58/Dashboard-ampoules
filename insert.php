@@ -8,4 +8,7 @@ $prix = $_POST['prix'];
 
 $bdd->exec("INSERT INTO historique ( date_change, etage, position, prix) VALUE ('$date_change', '$etage', '$position', '$prix')");
 
-echo "intervention validée !";
+echo ("<script LANGUAGE='JavaScript'>
+window.alert('Ajout effectué');
+window.location.href='historique.php';
+</script>");

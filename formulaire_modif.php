@@ -2,7 +2,6 @@
 require_once('connexion.php');
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,18 +10,17 @@ require_once('connexion.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/ampoule.png" />
-    <title>Dashboard</title>
+    <title>Document</title>
 </head>
 <body>
-
         <?php include "header.php" ?>
 
-<section class="envoi">
+        <section class="envoi">
     <div class="containerenvoi">
         <div class="wrapperenvoi">
             <div class="formulaire">
 
-            <form class="bloc3" action="insert.php" method="POST">
+            <form class="bloc3" action="modification.php" method="POST">
 
                 <label>Date:</label> <input class="champs" type="date" name="date_change"  />
                 
@@ -38,7 +36,7 @@ require_once('connexion.php');
 <br/>
                 <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires"  />
                 <div class="boutonsaccueil">
-                    <input id="snackbar" class="submit" type="submit" />
+                    <input id="snackbar" class="submit" type="submit" value="Modifier"/>
                 </div>
             </form>
 
@@ -46,11 +44,6 @@ require_once('connexion.php');
         </div>
     </div>
 </section>
-<aside>
-    <div class="gobtn">
-        <button class="gohisto"><a href="historique.php">Consulter l'historique</a></button>
-    </div>
-</aside>
 <footer class="footerbis">
     <p class="textfooter">&#169; Tony GILLET 2021</p>
 </footer>
