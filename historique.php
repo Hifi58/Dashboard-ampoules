@@ -39,19 +39,22 @@ require_once('connexion.php');
                 while ($donnees = $reponse->fetch()){
                     
         ?>
-                    <tr>
+            <tr>
                 <td><?php echo $donnees['date_change'] ?></td>
                 <td><?php echo $donnees['etage'] ?></td>
                 <td><?php echo $donnees['position'] ?></td>
                 <td><?php echo $donnees['prix'] ?></td>
-                <td><?php echo "<a href= modification.php?id=" . $donnees['id']. ' >Modifier</a>' ?>
-                <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?>
+                <td><?php echo "<a href= modification.php?id=" . $donnees['id']. ' >Modifier</a>' ?></td>
+                <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?></td>
             </tr>
 
             
        <?php //fermeture While
     }; 
+
+    require_once('fermeture.php');
     ?>
+
 
             <button class="backaccueil"><a href="accueil.php">Ajouter une ampoule</a></button>
 
