@@ -24,10 +24,10 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
         <?php include "header.php" ?>
 
 <!--Début formulaire de visualisation-->
-<section class="envoi">
-    <div class="containerenvoi">
-        <div class="wrapperenvoi">
-            <div class="formulaire">
+<section class="modif">
+    <div class="containerhisto">
+        <div class="wrapperhisto">
+            <div class="formulairemodif">
                 <table>
                 <thead>
                     <th>Dates</th>
@@ -35,7 +35,7 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
                     <th>positions</th>
                     <th>prix</th>
                 </thead>
-                <tbody>
+                
 
 <?php 
 
@@ -50,7 +50,7 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
                         <td><?php echo $donnees['position']; ?></td>
                         <td><?php echo $donnees['prix']; ?></td>
                     </tr>
-
+                     </table>                   
 
 <?php
 
@@ -101,5 +101,6 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
         </div>
     </div>
 </section>
+<?php include 'footer.php';?>
 </body>
 </html>

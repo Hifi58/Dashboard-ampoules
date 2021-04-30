@@ -3,15 +3,15 @@
 html{
     --color1: #FFC759;
     --color2: #272D2D;
-    --colorhover: #77A0A9;
     --font: 'Antonio', sans-serif;
     box-sizing: border-box;
+    background-image: url(images/wave.svg);
+    background-size: 205%;
 }
 
 body{
     margin: 0;
     padding: 0;
-    background-color: var(--colorhover);
     font-family: var(--font);
 }
 
@@ -51,14 +51,20 @@ p{
 /*section*/
 
 .envoi{
-    width: 100%;
-    background: var(--color2);
+    width: 20%;
+    margin-left: 40%;
+    background: rgba( 39, 45, 45, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     opacity: 1;
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
     display: flex;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .bloc3{
@@ -66,6 +72,19 @@ p{
     flex-direction: column;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+input{
+    border:none;
+    font-size: 1.2em;
+    background-color: transparent;
+    border-bottom: solid var(--color2) 1px;
+}
+
+input [type=date],
+select{
+    border:none;
+    font-size: 1.2em;
 }
 
 .champs{
@@ -83,12 +102,13 @@ p{
     backdrop-filter: blur( 20.0px );
     -webkit-backdrop-filter: blur( 20.0px );
     border-radius: 50px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: none;
     padding: 20px;
     font-family: var(--font);
     font-size: 1.2em;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin-right: 20px;
+    align-items: center;
 }
 
 .submit:hover{
@@ -97,28 +117,64 @@ p{
     cursor: pointer;
 }
 
+h1{
+    font-size: 1.3em;
+    text-align: center;
+}
 
 .historique{
-    width: 100%;
-    background: var(--color2);
+    width: 20%;
+    margin-left: 40%;
+    background: rgba( 39, 45, 45, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     opacity: 1;
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    margin-bottom: 80px;
+    padding-bottom: 10px;
+}
+
+.modif{
+    width: 20%;
+    margin-left: 40%;
+    background: rgba( 39, 45, 45, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    opacity: 1;
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    padding-bottom: 10px;
+}
+
+.containerhisto{
+    display: flex;
 }
 
 .formulairehisto{
     margin-top: 20px;
 }
 
+.formulairemodif{
+    margin: 20px;
+}
+
 .gohisto{
-    margin-bottom: 20px;
-    background: rgba( 255, 255, 255, 0.05 );
-    backdrop-filter: blur( 20.0px );
-    -webkit-backdrop-filter: blur( 20.0px );
+    background: rgba( 39, 45, 45, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
     border-radius: 50px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 20px;
@@ -127,26 +183,36 @@ p{
 .gohisto:hover{
     background: var(--color2);
     box-shadow: 0 8px 25px 0 var(--color1);
+    
+}
+
+.gohisto a:hover{
+    color: var(--color1);
 }
 
 .backaccueil{
-    margin-bottom: 20px;
-    background: rgba( 255, 255, 255, 0.05 );
-    backdrop-filter: blur( 20.0px );
-    -webkit-backdrop-filter: blur( 20.0px );
+    background: rgba( 39, 45, 45, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
     border-radius: 50px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 20px;
+
 }
 
 .backaccueil:hover{
-    background: var(--colorhover);
-    box-shadow: 0 8px 25px 0 var(--colorhover);
+    background: var(--color2);
+    box-shadow: 0 8px 25px 0 var(--color1);
+    
 }
 
+.backaccueil a:hover{
+    color: var(--color1);
+}
 a{
     text-decoration: none;
-    color: var(--color1);
+    color: var(--color2);
     font-family: var(--font);
     font-size: 1.2em;
 }
@@ -155,13 +221,16 @@ a{
 
 table{
     text-align: center;
-    color: var(--color1);
+    color: var(--color2);
 }
 
 table a:hover{
     text-decoration: underline var(--color1);
 }
 
+hr{
+    color: var(--color2);
+}
 /*aside*/
 
 .gobtn{
@@ -179,19 +248,6 @@ footer{
     backdrop-filter: blur( 15.5px );
     -webkit-backdrop-filter: blur( 15.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    position: relative;
-    bottom:0;
-    width:100%;
-    height:50px;
-    text-align: center;
-}
-
-.footerbis{
-    background: var(--color2);
-    opacity: 1;
-    backdrop-filter: blur( 15.5px );
-    -webkit-backdrop-filter: blur( 15.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
     position: absolute;
     bottom:0;
     width:100%;
@@ -199,3 +255,23 @@ footer{
     text-align: center;
 }
 
+
+/*responsive*/
+
+@media screen and (max-width: 1319px ){
+
+    html{
+        background-image: none;
+        background-color: whitesmoke;
+    }
+
+    .envoi{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .historique{
+        width: 100%;
+        margin-left: 0;
+    }
+}

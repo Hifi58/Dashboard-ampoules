@@ -28,42 +28,48 @@ require_once('connexion.php');
             $reponse = $bdd->query('SELECT * FROM historique ORDER BY date_change DESC');
             ?>
             <table>
-            <thead>
-                <th>Dates</th>
-                <th>Étages</th>
-                <th>positions</th>
-                <th>prix</th>
-            </thead>
-    <tbody>
+                <thead>
+                    <tr>
+                    <th>Dates</th>
+                    <th>Étages</th>
+                    <th>positions</th>
+                    <th>prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+            </table>
         <?php //Mise en place des variables dans le tableau pour ajouter les fonctions de suppression et de modification
                 while ($donnees = $reponse->fetch()){
                     
         ?>
-            <tr>
-                <td><?php echo $donnees['date_change'] ?></td>
-                <td><?php echo $donnees['etage'] ?></td>
-                <td><?php echo $donnees['position'] ?></td>
-                <td><?php echo $donnees['prix'] ?></td>
-                <td><?php echo "<a href= formulaire_modif.php?id=" . $donnees['id'] . '>Modifier</a>' ?></td>
-                <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?></td>
-            </tr>
-
-            
+            <table>
+                    <tr>
+                        <td><?php echo $donnees['date_change'] ?></td>
+                        <hr>
+                        <td><?php echo $donnees['etage'] ?></td>
+                        <td><?php echo $donnees['position'] ?></td>
+                        <td><?php echo $donnees['prix'] ?></td>
+                        <td><?php echo "<a href= formulaire_modif.php?id=" . $donnees['id'] . '>Modifier</a>' ?></td>
+                        <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?></td>
+                        <hr>
+                    </tr>
+                </tbody>
+              </table>
        <?php //fermeture While
     }; 
 
     require_once('fermeture.php');
     ?>
 
-
-            <button class="backaccueil"><a href="accueil.php">Ajouter une ampoule</a></button>
-
-            </div>
-        </div>
+        </div>    
     </div>
+</div>
 </section>
 
-       
-<script src="main.js"></script>
+<div class="gobtn">
+<button class="backaccueil"><a href="accueil.php">Ajouter une ampoule</a></button>
+
+</div>
+<?php include 'footer.php'?>
 </body>
 </html>
