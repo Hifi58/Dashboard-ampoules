@@ -44,7 +44,7 @@ require_once('connexion.php');
                 <td><?php echo $donnees['etage'] ?></td>
                 <td><?php echo $donnees['position'] ?></td>
                 <td><?php echo $donnees['prix'] ?></td>
-                <td><?php echo "<a href= formulaire_modif.php>Modifier</a>" ?></td>
+                <td><?php echo "<a href= formulaire_modif.php?id=" . $donnees['id'] . '>Modifier</a>' ?></td>
                 <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>' ?></td>
             </tr>
 

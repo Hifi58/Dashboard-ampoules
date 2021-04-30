@@ -4,14 +4,17 @@ require_once('connexion.php');
 
 <?php
 
-$date_change = $_GET['date_change'];
-$etage = $_GET['etage'];
-$position = $_GET['position'];
-$prix = $_GET['prix'];
-$id = $_GET['id'];
+$date_change = $_POST['date_change'];
+$etage = $_POST['etage'];
+$position = $_POST['position'];
+$prix = $_POST['prix'];
+$id = $_POST['id'];
 
-$nb_modif=$bdd->exec("UPDATE FROM historique SET date_change = '$date_change', etage = '$etage', position = '$position', prix = '$prix1' WHERE  id = '$id'");
+$bdd->exec("UPDATE historique SET date_change = '$date_change', etage = '$etage', position = '$position', prix = '$prix' WHERE  id = '$id'");
 
-echo $nb_modif. ' entrée modifiée';
+ echo ("<script LANGUAGE='JavaScript'>
+ window.alert('Modification effectué');
+ window.location.href='historique.php';
+</script>");
 
 ?>
