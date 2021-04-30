@@ -225,7 +225,7 @@ table{
 }
 
 table a:hover{
-    text-decoration: underline var(--color1);
+    color: whitesmoke;
 }
 
 hr{
