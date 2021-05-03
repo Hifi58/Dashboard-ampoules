@@ -21,17 +21,17 @@
             <div class="wrappersignup">
                 <div class="formulairesignup">
                     <form action="sign_up.php" method="POST" class="bloc3">
-                    
-                     <label>Pseudo</label> <input class="champs" type="text" name="pseudo"  />
+
+                     <label>Pseudo</label> <input class="champs" type="text" name="pseudo" placeholder="Votre pseudo ici"  />
                 
-                     <label>Mot de passe</label><input type="password" name="pass" >
+                     <label>Mot de passe</label><input type="password" name="pass" placeholder="Votre mot de passe" />
 
-                     <label>Confirmation de mot de passe</label><input type="password" name="passbis" >
+                     <label>Confirmation de mot de passe</label><input type="password" name="passbis" placeholder="Répétez votre mot de passe" />
 
-                     <label>E-mail</label><input type="email" name="mail" >
+                     <label>E-mail</label><input type="email" name="mail" placeholder="Votre adresse mail" />
 
                         <div class="boutonsaccueil">
-                            <input  class="submit" type="submit" name="valider" />
+                            <input  class="submit" type="submit" name="valider" value="Inscription"/>
                         </div>
 
                     </form>

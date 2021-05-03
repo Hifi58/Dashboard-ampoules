@@ -3,7 +3,7 @@ session_start();
 
 $pseudo = $_POST['pseudo'];
 //hachage du mot de passe
-$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+$pass = $_POST['pass'];
 $passbis = $_POST['passbis'];
 $mail = $_POST['mail'];
 $error ="";
@@ -26,10 +26,13 @@ else{
         $error="Pseudo déjà utilisé";
     else{
         $insert=$bdd->prepare("INSERT INTO membres (pseudo, pass, mail) VALUES(?, ?, ?)");
-        if($insert->execute(array($pseudo, $pass, $mail)))
+        if($insert->execute(array($pseudo, md5($pass), $mail)))
         header("location: Accueil.php");
         }
     }
 }
+
+echo $error;
+  
 
 ?>
