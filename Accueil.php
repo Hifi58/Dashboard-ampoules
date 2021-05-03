@@ -38,7 +38,7 @@ require_once('connexion.php');
 <br/>
                 <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires"  />
                 <div class="boutonsaccueil">
-                    <input id="snackbar" class="submit" type="submit" />
+                    <input  class="submit" type="submit" />
                 </div>
             </form>
 

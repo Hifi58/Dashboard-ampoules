@@ -26,12 +26,12 @@
                 
                      <label>Mot de passe</label><input type="password" name="pass" >
 
-                     <label>Confirmation de mot de passe</label><input type="password" name="pass" >
+                     <label>Confirmation de mot de passe</label><input type="password" name="passbis" >
 
                      <label>E-mail</label><input type="email" name="mail" >
 
                         <div class="boutonsaccueil">
-                            <input id="snackbar" class="submit" type="submit" />
+                            <input  class="submit" type="submit" name="valider" />
                         </div>
 
                     </form>
