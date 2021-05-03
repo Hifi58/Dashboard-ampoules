@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/ampoule.png" />
-    <title>Dashboard</title>
+    <title>Inscription</title>
 </head>
 <body>
 
@@ -22,13 +22,13 @@
                 <div class="formulairesignup">
                     <form action="sign_up.php" method="POST" class="bloc3">
 
-                     <label>Pseudo</label> <input class="champs" type="text" name="pseudo" placeholder="Votre pseudo ici"  />
-                
-                     <label>Mot de passe</label><input type="password" name="pass" placeholder="Votre mot de passe" />
+                      <input class="champs" type="text" name="pseudo" placeholder="Votre pseudo"  />
+                <br/>
+                      <input type="password" name="pass" placeholder="Votre mot de passe" />
 
-                     <label>Confirmation de mot de passe</label><input type="password" name="passbis" placeholder="Répétez votre mot de passe" />
+                      <input type="password" name="passbis" placeholder="Répétez votre mot de passe" />
 
-                     <label>E-mail</label><input type="email" name="mail" placeholder="Votre adresse mail" />
+                      <input type="email" name="mail" placeholder="Votre adresse mail" />
 
                         <div class="boutonsaccueil">
                             <input  class="submit" type="submit" name="valider" value="Inscription"/>

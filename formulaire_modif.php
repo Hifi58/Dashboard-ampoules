@@ -73,12 +73,12 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
 
             <form class="bloc3" action="modification.php" method="POST">
 
-                <label>Date:</label> <input class="champs" type="date" name="date_change"  />
+                <input class="champs" type="date" name="date_change"  />
                 
-                <label>Étages</label><input type="number" min="0" max="11" name="etage" />
+                <input type="number" min="0" max="11" name="etage" placeholder="Étages" />
         
 <br/>
-                <label>Positions</label><select name="position">
+                <select name="position">
                     <option value="">Sélection d'une position</option>
                     <option value="gauche">Gauche</option>
                     <option value="droite">Droite</option>
@@ -87,7 +87,7 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
 <br/>
                 <input type="hidden" name="id" step="any" min="0" value="<?php echo $id ?>">
 
-                <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires"  />
+                <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires" placeholder="Prix" />
                 <div class="boutonsaccueil">
 
                     <input  class="submit" type="submit" value="Modifier"/>

@@ -24,19 +24,19 @@ require_once('connexion.php');
 
             <form class="bloc3" action="insert.php" method="POST">
 
-                <label>Date:</label> <input class="champs" type="date" name="date_change"  />
+                <input class="champs" type="date" name="date_change"  />
                 
-                <label>Étages</label><input type="number" min="0" max="11" name="etage" id="etage">
+                <input type="number" min="0" max="11" name="etage" id="etage" placeholder="Étages">
         
-<br/>
-                <label>Positions</label><select name="position" id="position">
+
+                <select name="position" id="position">
                     <option value="">Sélection d'une position</option>
                     <option value="gauche">Gauche</option>
                     <option value="droite">Droite</option>
                     <option value="fond">Fond</option>
                 </select>
 <br/>
-                <label>Prix :</label> <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires"  />
+                <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires" placeholder="Prix"  />
                 <div class="boutonsaccueil">
                     <input  class="submit" type="submit" />
                 </div>
