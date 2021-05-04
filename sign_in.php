@@ -2,7 +2,7 @@
 echo $_SERVER['REQUEST_METHOD'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    //connexion BDD
+    //connexion bdd
     include('connexion.php');
     //  Récupération de l'utilisateur et de son pass hashé
     $data = $bdd->prepare('SELECT id, pass FROM membres WHERE pseudo = ? LIMIT 1');
@@ -10,20 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $result = $data->fetchAll();
   
     if (!$result){
-      echo 'blabla';}
+      echo 'Mauvais identifiant ou mot de passe !';}
     else{
       // Comparaison du pass envoyé via le formulaire avec la base
-      $ok_password = password_verify($_POST['pass'], $result['pass']);
-      echo $ok_password;
-      if ($ok_password) {
+      if (password_verify($_POST['pass'], $result['pass'])){
           session_start();
           $_SESSION['id'] = $result['id'];
           $_SESSION['pseudo'] = $_POST['pseudo'];
           echo 'Vous êtes connecté !';
       }
       else {
-          echo 'blabla2';
-         
+          echo 'bla !';
       }
     }
   }
