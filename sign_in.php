@@ -10,10 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $result = $data->fetchAll();
   
     if (!$result){
-      echo 'Kimino';}
+      echo 'blabla';}
     else{
       // Comparaison du pass envoyé via le formulaire avec la base
       $ok_password = password_verify($_POST['pass'], $result['pass']);
+      echo $ok_password;
       if ($ok_password) {
           session_start();
           $_SESSION['id'] = $result['id'];
@@ -21,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
           echo 'Vous êtes connecté !';
       }
       else {
-          echo 'Genichi';
+          echo 'blabla2';
+         
       }
     }
   }
