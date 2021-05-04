@@ -6,20 +6,29 @@ $pass=md5($_POST["pass"]);
 $valider=$_POST["valider"];
 $erreur="";
 
-if(isset($valider)){
-    include("connexion.php");
-    $data->$bdd("SELECT * FROM membres WHERE pseudo=? AND pass=? LIMIT 1");
-    $data->execute(array('$pseudo, $pass'));
-    $table=$data->fetchall();
-    if(count($table)>0){
-        $_SESSION ["pseudopass"] = $table[0] ["pseudo"]." ". $table[0] ["pass"];
-        $_SESSION ["autoriser"]="oui";
-        header("location:Accueil.php");
-      }
-      else{
-        $erreur="Mauvais login ou mot de passe!";
+
+if isset($valider){
+    $pseudo = htmlspecialchars($_POST["pseudo"]);
+    $pass = md5($_POST["pass"]);
+    if(!empty($pseudo)) AND (!empty($pass)){
+        $donnees = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND pass = ?");
+        $donnees->execute(array($pseudo, $pass));
+        $userexist=$donnees->rowCount();
+        if($userexist == 1){
+            $info = $donnees->fetch()
+            $_SESSION['id'] = $info['id'];
+            $_SESSION['pseudo'] = $info['pseudo'];
+            $_SESSION['mail'] = $info['mail'];
+            header("Location: Accueil.php?id=".$_SESSION['id']);
+        }   else{
+            $erreur = "Mauvais mail ou mot de passe !";
+            }
+        }
+            else{
+                $erreur = "Tous les champs doivent être complétés !";
+        }
     }
- }
+
 ?>
 
 <!DOCTYPE html>

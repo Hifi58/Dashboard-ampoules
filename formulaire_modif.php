@@ -5,9 +5,8 @@ require_once('connexion.php');
 
 $id = $_GET['id'];
 
- 
-//affichage de l'historique de manière décroissante
 $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
+
 ?>
 
 <!DOCTYPE html>

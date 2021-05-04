@@ -13,7 +13,8 @@ $id = $_GET['id'];
 $bdd->exec("DELETE FROM historique WHERE id = '$id'");
 
 echo ("<script LANGUAGE='JavaScript'>
-onclick=\"if(window.confirm('Voulez-vous vraiment supprimer ?')){return true;}else{return false;}\";
+window.alert('Suppression effectué');
+window.location.href='historique.php';
 </script>");
 ?>
 

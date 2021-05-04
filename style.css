@@ -53,6 +53,7 @@ p{
 
 h3{
     color: var(--color1);
+    margin-left: 20px;
 }
 
 /*section*/
@@ -238,6 +239,7 @@ a{
     font-size: 1.2em;
 }
 
+
 /*inscription*/
 
 .inscription{
@@ -327,5 +329,19 @@ footer{
     .historique{
         width: 100%;
         margin-left: 0;
+    }
+
+    .modif{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .inscription{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .citation{
+        display: none;
     }
 }

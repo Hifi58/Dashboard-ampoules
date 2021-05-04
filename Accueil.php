@@ -16,7 +16,7 @@ require_once('connexion.php');
 <body>
 
         <?php include "header.php" ?>
-
+<h1>Veuillez remplir tous les champs</h1>
 <section class="envoi">
     <div class="containerenvoi">
         <div class="wrapperenvoi">
