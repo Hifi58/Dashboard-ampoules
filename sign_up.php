@@ -1,4 +1,6 @@
 <?php 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 session_start();
 
 $pseudo = $_POST['pseudo'];
@@ -26,8 +28,8 @@ else{
         $error="Pseudo déjà utilisé";
     else{
         $insert=$bdd->prepare("INSERT INTO membres (pseudo, pass, mail) VALUES(?, ?, ?)");
-        if($insert->execute(array($pseudo, md5($pass), $mail)))
-        header("location: Accueil.php");
+        if($insert->execute(array($pseudo, password_hash($pass, PASSWORD_DEFAULT), $mail)))
+        header("location: sign_in.php");
         }
     }
 }

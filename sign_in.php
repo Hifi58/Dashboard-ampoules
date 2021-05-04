@@ -1,34 +1,30 @@
 <?php
-session_start();
+echo $_SERVER['REQUEST_METHOD'];
 
-$pseudo=$_POST["pseudo"];
-$pass=md5($_POST["pass"]);
-$valider=$_POST["valider"];
-$erreur="";
-
-
-if isset($valider){
-    $pseudo = htmlspecialchars($_POST["pseudo"]);
-    $pass = md5($_POST["pass"]);
-    if(!empty($pseudo)) AND (!empty($pass)){
-        $donnees = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND pass = ?");
-        $donnees->execute(array($pseudo, $pass));
-        $userexist=$donnees->rowCount();
-        if($userexist == 1){
-            $info = $donnees->fetch()
-            $_SESSION['id'] = $info['id'];
-            $_SESSION['pseudo'] = $info['pseudo'];
-            $_SESSION['mail'] = $info['mail'];
-            header("Location: Accueil.php?id=".$_SESSION['id']);
-        }   else{
-            $erreur = "Mauvais mail ou mot de passe !";
-            }
-        }
-            else{
-                $erreur = "Tous les champs doivent être complétés !";
-        }
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //connexion BDD
+    include('connexion.php');
+    //  Récupération de l'utilisateur et de son pass hashé
+    $data = $bdd->prepare('SELECT id, pass FROM membres WHERE pseudo = ? LIMIT 1');
+    $data->execute(array($_POST['pseudo']));
+    $result = $data->fetchAll();
+  
+    if (!$result){
+      echo 'Kimino';}
+    else{
+      // Comparaison du pass envoyé via le formulaire avec la base
+      $ok_password = password_verify($_POST['pass'], $result['pass']);
+      if ($ok_password) {
+          session_start();
+          $_SESSION['id'] = $result['id'];
+          $_SESSION['pseudo'] = $_POST['pseudo'];
+          echo 'Vous êtes connecté !';
+      }
+      else {
+          echo 'Genichi';
+      }
     }
-
+  }
 ?>
 
 <!DOCTYPE html>
@@ -57,11 +53,9 @@ if isset($valider){
                 <input type="text" name="pseudo" placeholder="Pseudo" />
 
                 <input type="password" name="pass" placeholder="Mot de passe" />
-
-
-            <div class="boutonsaccueil">
+          
                 <input  class="submit" type="submit" name="valider" value="Se connecter"/>
-            </div>
+           
 
                 </form>
             </div>
