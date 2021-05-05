@@ -1,13 +1,11 @@
 <?php
-echo $_SERVER['REQUEST_METHOD'];
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     //connexion bdd
     include('connexion.php');
     //  Récupération de l'utilisateur et de son pass hashé
     $data = $bdd->prepare('SELECT id, pass FROM membres WHERE pseudo = ? LIMIT 1');
     $data->execute(array($_POST['pseudo']));
-    $result = $data->fetchAll();
+    $result = $data->fetch();
   
     if (!$result){
       echo 'Mauvais identifiant ou mot de passe !';}
@@ -17,13 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
           session_start();
           $_SESSION['id'] = $result['id'];
           $_SESSION['pseudo'] = $_POST['pseudo'];
-          echo 'Vous êtes connecté !';
+          header("location: Accueil.php");
       }
       else {
-          echo 'bla !';
+          echo 'Mauvais identifiant ou mot de passe !';
+        
       }
     }
   }
+  
 ?>
 
 <!DOCTYPE html>
@@ -39,9 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <body >
 
-<?php include "header.php" ?>
+<header>
+    <div class='container'>
+        <div class='wrapper'>
+            <div class='bloc1'><img src="images/ampouleicon.png" alt="ampoule" class="icone">
+            </div>
+            <div class='bloc2'><p class="citation"><q>On ne jette pas une ampoule quand elle éclaire encore. </q> <br/><br/> Patrice Leconte</p></div>
+        </div>
+    </div>
+</header>
 
-<h1><a href="inscription.php">Créer un compte</a></h1>
+<h1><a href="index.php" title="Si ce n'est pas déjà fait">Créer un compte</a></h1>
 
 <section class='inscription'>
     <div class="containersignup">
