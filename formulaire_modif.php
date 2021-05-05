@@ -1,6 +1,11 @@
 <?php
 //connection BDD
-
+session_start();
+require("Fonctions/hote.php");
+if(!isconnected()){
+   header("location: sign_in.php");
+exit(); 
+}
 require_once('connexion.php');
 
 $id = $_GET['id'];

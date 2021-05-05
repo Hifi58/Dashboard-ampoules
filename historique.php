@@ -1,6 +1,13 @@
 <?php
 require_once('connexion.php');
 
+session_start();
+require("Fonctions/hote.php");
+if(!isconnected()){
+   header("location: sign_in.php");
+exit(); 
+
+}
 
 ?>
 

@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       // Comparaison du pass envoyé via le formulaire avec la base
       if (password_verify($_POST['pass'], $result['pass'])){
           session_start();
+          $_SESSION['connected'] = 1;
           $_SESSION['id'] = $result['id'];
           $_SESSION['pseudo'] = $_POST['pseudo'];
           header("location: Accueil.php");
