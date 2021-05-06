@@ -45,6 +45,7 @@ require_once('connexion.php');
                     <option value="fond">Fond</option>
                 </select>
 <br/>
+                <input type="hidden" name="id_membre">
                 <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires" placeholder="Prix"  />
                 <div class="boutonsaccueil">
                     <input  class="submit" type="submit" />

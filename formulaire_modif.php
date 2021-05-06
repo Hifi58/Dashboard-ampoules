@@ -9,9 +9,11 @@ exit();
 require_once('connexion.php');
 
 $id = $_GET['id'];
+$member_id = $_SESSION['id'];
 
-$reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
-
+$reponse = $bdd->prepare('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=:member_id LIMIT 1  ');
+$reponse->bindParam(':member_id', $member_id);
+$reponse->execute();
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +92,7 @@ $reponse = $bdd->query("SELECT * FROM historique WHERE id='$id'");
                 </select>
 <br/>
                 <input type="hidden" name="id" step="any" min="0" value="<?php echo $id ?>">
-
+                <input type="hidden" name="id_membres" step="any" min="0" value="<?php echo $member_id ?>">
                 <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires" placeholder="Prix" />
                 <div class="boutonsaccueil">
 

@@ -9,6 +9,7 @@ exit();
 
 }
 
+$member_id = $_SESSION['id'];
 
 ?>
 
@@ -32,8 +33,11 @@ exit();
         <div class="wrapperhisto">
             <div class="formulairehisto">
             <?php 
+            $member_id = $_SESSION['id'];
             //affichage de l'historique de manière décroissante
-            $reponse = $bdd->query('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=?  ORDER BY historique.date_change DESC');
+            $reponse = $bdd->prepare('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=:member_id ORDER BY historique.date_change DESC');
+            $reponse->bindParam(':member_id', $member_id);
+            $reponse->execute();
             ?>
             <table>
                 <thead>
