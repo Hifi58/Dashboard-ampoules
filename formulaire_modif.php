@@ -8,12 +8,14 @@ exit();
 }
 require_once('connexion.php');
 
-$id = $_GET['id'];
-$member_id = $_SESSION['id'];
+$id = $_GET['id_historique'];
 
-$reponse = $bdd->prepare('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=:member_id LIMIT 1  ');
+$member_id = $_SESSION['id'];
+//affichage de l'historique de manière décroissante
+$reponse = $bdd->prepare('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=:member_id ');
 $reponse->bindParam(':member_id', $member_id);
 $reponse->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -91,8 +93,8 @@ $reponse->execute();
                     <option value="fond">Fond</option>
                 </select>
 <br/>
-                <input type="hidden" name="id" step="any" min="0" value="<?php echo $id ?>">
-                <input type="hidden" name="id_membres" step="any" min="0" value="<?php echo $member_id ?>">
+                <input type="hidden" name="id_historique" step="any" min="0" value="<?php echo $id ?>">
+
                 <input class="champs" type="number" name="prix" step=".01" min="0" title="ne pas écire de symboles monétaires" placeholder="Prix" />
                 <div class="boutonsaccueil">
 

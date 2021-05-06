@@ -62,8 +62,8 @@ $member_id = $_SESSION['id'];
                         <td><?php echo $donnees['etage'] ?></td>
                         <td><?php echo $donnees['position'] ?></td>
                         <td><?php echo $donnees['prix'] ?></td>
-                        <td><?php echo "<a href= formulaire_modif.php?id=" . $donnees['id'] . '>Modifier</a>' ?></td>
-                        <td><?php echo "<a href= supprimer.php?id=" . $donnees['id'] . '>Supprimer</a>'?></td>
+                        <td><?php echo "<a href= formulaire_modif.php?id=" . $donnees['id_historique'] . '>Modifier</a>' ?></td>
+                        <td><?php echo "<a href= supprimer.php?id=" . $donnees['id_historique'] . '>Supprimer</a>'?></td>
                         <hr>
                     </tr>
                 </tbody>
