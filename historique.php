@@ -9,6 +9,7 @@ exit();
 
 }
 
+
 ?>
 
 
@@ -32,7 +33,7 @@ exit();
             <div class="formulairehisto">
             <?php 
             //affichage de l'historique de manière décroissante
-            $reponse = $bdd->query('SELECT * FROM historique ORDER BY date_change DESC');
+            $reponse = $bdd->query('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=?  ORDER BY historique.date_change DESC');
             ?>
             <table>
                 <thead>

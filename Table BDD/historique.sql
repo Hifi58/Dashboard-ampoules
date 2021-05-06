@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : ven. 30 avr. 2021 à 09:50
--- Version du serveur :  5.7.24
--- Version de PHP : 7.2.19
+-- Host: localhost:3306
+-- Generation Time: May 06, 2021 at 09:41 AM
+-- Server version: 5.7.24
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,17 +19,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `ampoules`
+-- Database: `ampoules`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `historique`
+-- Table structure for table `historique`
 --
 
 CREATE TABLE `historique` (
   `id` int(11) NOT NULL,
+  `id_membres` int(11) NOT NULL,
   `date_change` date NOT NULL,
   `etage` int(255) NOT NULL,
   `position` varchar(11) COLLATE utf8_general_mysql500_ci NOT NULL,
@@ -36,36 +38,45 @@ CREATE TABLE `historique` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci;
 
 --
--- Déchargement des données de la table `historique`
+-- Dumping data for table `historique`
 --
 
-INSERT INTO `historique` (`id`, `date_change`, `etage`, `position`, `prix`) VALUES
-(22, '2021-04-29', 6, 'droite', '12.50'),
-(33, '2021-04-29', 1, 'droite', '10.00'),
-(34, '2021-03-29', 0, 'gauche', '11.50'),
-(35, '2021-04-22', 1, 'droite', '11.20'),
-(36, '2021-04-30', 4, 'droite', '12.40'),
-(38, '2021-04-30', 0, 'gauche', '1.00');
+INSERT INTO `historique` (`id`, `id_membres`, `date_change`, `etage`, `position`, `prix`) VALUES
+(43, 12, '2021-05-05', 5, 'droite', '10.00'),
+(44, 12, '2021-05-20', 5, 'droite', '11.00'),
+(45, 12, '2021-05-05', 3, 'droite', '9.00'),
+(47, 13, '2021-05-05', 1, 'droite', '10.01');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `historique`
+-- Indexes for table `historique`
 --
 ALTER TABLE `historique`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_membres` (`id_membres`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `historique`
+-- AUTO_INCREMENT for table `historique`
 --
 ALTER TABLE `historique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `historique`
+--
+ALTER TABLE `historique`
+  ADD CONSTRAINT `historique_ibfk_1` FOREIGN KEY (`id_membres`) REFERENCES `membres` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
