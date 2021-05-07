@@ -20,4 +20,3 @@ $delete->execute();
  window.location.href='historique.php';
  </script>");
 ?>
-

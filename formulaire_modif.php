@@ -10,10 +10,10 @@ require_once('connexion.php');
 
 $id = $_GET['id_historique'];
 
-$member_id = $_SESSION['id'];
+
 //affichage de l'historique de manière décroissante
-$reponse = $bdd->prepare('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=:member_id ');
-$reponse->bindParam(':member_id', $member_id);
+$reponse=$bdd->prepare("SELECT * FROM historique WHERE historique.id_historique=:id");
+$reponse->bindParam(':id', $id);
 $reponse->execute();
 
 ?>

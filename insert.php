@@ -16,3 +16,4 @@ echo $member_id;
 window.alert('Ajout effectué');
  window.location.href='historique.php';
  </script>");
+ 
