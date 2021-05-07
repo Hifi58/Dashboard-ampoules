@@ -38,6 +38,7 @@ $member_id = $_SESSION['id'];
             $reponse = $bdd->prepare('SELECT * FROM historique INNER JOIN membres ON membres.id=historique.id_membres WHERE historique.id_membres=:member_id ORDER BY historique.date_change DESC');
             $reponse->bindParam(':member_id', $member_id);
             $reponse->execute();
+            
             ?>
             <table>
                 <thead>
@@ -62,8 +63,8 @@ $member_id = $_SESSION['id'];
                         <td><?php echo $donnees['etage'] ?></td>
                         <td><?php echo $donnees['position'] ?></td>
                         <td><?php echo $donnees['prix'] ?></td>
-                        <td><?php echo "<a href= formulaire_modif.php?id=" . $donnees['id_historique'] . '>Modifier</a>' ?></td>
-                        <td><?php echo "<a href= supprimer.php?id=" . $donnees['id_historique'] . '>Supprimer</a>'?></td>
+                        <td><?php echo "<a href= formulaire_modif.php?id_historique=" . $donnees['id_historique'] . '>Modifier</a>' ?></td>
+                        <td><?php echo "<a href= supprimer.php?id_historique=" . $donnees['id_historique'] . '>Supprimer</a>'?></td>
                         <hr>
                     </tr>
                 </tbody>
